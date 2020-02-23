@@ -5,6 +5,7 @@ if (( $+functions[zpm] )); then
   zpm zpm-zsh/colors,inline
 fi
 
+typeset -g pr_correct
 pr_correct="$c[cyan] Change "$c[red]%R$c[cyan]" "
 pr_correct+="to "$c[green]%r$c[cyan]"? "
 pr_correct+="($c[green]${c_underline}Y$c_reset$c[green]es$c[cyan], "
