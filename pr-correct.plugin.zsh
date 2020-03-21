@@ -1,15 +1,7 @@
 #!/usr/bin/env zsh
-DEPENDENCES_ZSH+=( zpm-zsh/colors )
 
-if (( $+functions[zpm] )); then
-  zpm zpm-zsh/colors,inline
-fi
+if (( $+functions[zpm] )); then #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
+  zpm zpm-zsh/colors #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
+fi #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
 
-typeset -g pr_correct
-pr_correct="$c[cyan] Change "$c[red]%R$c[cyan]" "
-pr_correct+="to "$c[green]%r$c[cyan]"? "
-pr_correct+="($c[green]${c_underline}Y$c_reset$c[green]es$c[cyan], "
-pr_correct+="$c[red]${c_underline}N${c_reset}${c[red]}o$c[cyan], "
-pr_correct+="$c[red]${c_underline}A${c_reset}${c[red]}bort$c[cyan], "
-pr_correct+="$c[yellow]${c_underline}E${c_reset}${c[yellow]}dit$c[cyan]) "
-pr_correct+="$c[blue]> $c_reset"
+typeset -g pr_correct="${c[cyan]} Change ${c[red]}%R${c[cyan]} to ${c[green]}%r${c[cyan]}? (${c[green]}${c[underline]}Y${c[reset]}${c[green]}es${c[cyan]}, ${c[red]}${c[underline]}N${c[reset]}${c[red]}o${c[cyan]}, ${c[red]}${c[underline]}A${c[reset]}${c[red]}bort${c[cyan]}, ${c[yellow]}${c[underline]}E${c[reset]}${c[yellow]}dit${c[cyan]}) ${c[blue]}> ${c[reset]}"
